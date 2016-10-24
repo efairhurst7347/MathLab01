@@ -63,11 +63,11 @@ public class MathLab01st
 		System.out.println("=====================================================");
 		System.out.println("Square Area:                      " + Geometry.squareArea(side));
 		System.out.println("Rectangle Area:                   " + Geometry.rectangleArea(length,width));
-//		System.out.println("Parallelogram Area:               " + Geometry.parallelogramArea(base1,height));
-//		System.out.println("Triangle Area:                    " + Geometry.triangleArea(base1,height));		
-//		System.out.println("Trapezoid Area:                   " + Geometry.trapezoidArea(base1,base2,height));
-//		System.out.println("Hexagon Area:                     " + Geometry.hexagonArea(base1,base2,height));
-//		System.out.println("Circle Area:                      " + Geometry.circleArea(radius));
+		System.out.println("Parallelogram Area:               " + Geometry.parallelogramArea(base1,height));
+		System.out.println("Triangle Area:                    " + Geometry.triangleArea(base1,height));		
+		System.out.println("Trapezoid Area:                   " + Geometry.trapezoidArea(base1,base2,height));
+		System.out.println("Hexagon Area:                     " + Geometry.hexagonArea(base1,base2,height));
+		System.out.println("Circle Area:                      " + Geometry.circleArea(radius));
 		System.out.println("\n");
 	}
 
@@ -78,8 +78,8 @@ public class MathLab01st
 		System.out.println("Surface Areas of 3D Shapes");
 		System.out.println("=====================================================");
 		System.out.println("Cube Surface Area:                " + Geometry.cubeSurfaceArea(side));
-//		System.out.println("Square Prism Surface Area:        " + Geometry.squarePrismSurfaceArea(side,height));
-//		System.out.println("Rectangular Prism Surface Area:   " + Geometry.rectangularPrismSurfaceArea(length,width,height));
+		System.out.println("Square Prism Surface Area:        " + Geometry.squarePrismSurfaceArea(side,height));
+		System.out.println("Rectangular Prism Surface Area:   " + Geometry.rectangularPrismSurfaceArea(length,width,height));
 //		System.out.println("Sphere Surface Area:              " + Geometry.sphereSurfaceArea(radius));
 		System.out.println("\n");
 	}
@@ -150,23 +150,59 @@ class Geometry
 	}
 	
 	//Rectangle
-	public static double rectangleArea (double s)
+	public static double rectangleArea (double l, double w)
 	{
-	return 
+	return l * w;
+	}
+	
+	//Parallelogram
+	public static double parallelogramArea (double b1, double h)
+	{
+	return b1 * h;
+	}
+	
+	//Triangle
+	public static double triangleArea (double b1, double h)
+	{
+	return (h * b1) / 2;
+	}
+	
+	//Trapezoid
+	public static double trapezoidArea (double b1, double b2, double h)
+	{
+	return ((b1 + b2) / 2) * h;
+	}
+	
+	//Hexagon
+	public static double hexagonArea (double b1, double b2, double h)
+	{
+	return (b1 + b2) * h;
+	}
+	
+	//Circle
+	public static double circleArea (double r)
+	{
+	return Math.PI * Math.pow(r, 2);
 	}
 
-
-
-
-    // 3D Surface Areas
+// 3D Surface Areas
+	//Cube
 	public static double cubeSurfaceArea (double s)                      
 	{ 
 	    return 6 * s * s; 
 	}
 	
+	// Square
+	public static double squarePrismSurfaceArea (double s, double h)
+	{
+		return 2 * Math.pow(s, 2) + 4 * s * h;
+	}
 	
-	
-	
+	//Rectangle
+	public static double rectangularPrismSurfaceArea (double l, double w, double h)
+	{
+		return l * w * h;
+	}
 	
 	// 3D Volumes
 	public static double cubeVolume (double s)             
